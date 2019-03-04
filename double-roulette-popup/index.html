@@ -1,0 +1,34 @@
+<html lang="en" dir="ltr">
+    <head>
+    	<title>CA88</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <link rel="stylesheet" type="text/css" href="css/style.css">
+        <link rel="shortcut icon" type="image/png" href="favicon.ico">
+    </head>
+    <body>
+        <div class="pop"></div>
+        <div class="pop-dRoulette">
+            <div class="pop-close"></div>
+        </div>
+    	<script type="text/javascript" src="js/jquery.min.js"></script>
+    	<script type="text/javascript" src="js/script.js"></script>
+        <script> 
+        $('.pop-close').click(function(){ 
+            $('.featherlight-close', window.parent.document).trigger('click'); 
+            $('.pop, .pop-dRoulette').fadeOut();
+        }); 
+        // onclick outside element
+        $(function(){               
+            var $win = $(window);
+            var $box = $(".pop-dRoulette");
+             $win.on("click.Bst", function(event){      
+                if ( $box.has(event.target).length == 0 && !$box.is(event.target)){
+                  $('.pop, .pop-dRoulette').fadeOut();
+                } 
+            });  
+        });
+
+        </script> 
+    </body>
+</html>
